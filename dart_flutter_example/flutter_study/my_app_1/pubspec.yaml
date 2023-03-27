@@ -1,0 +1,28 @@
+#앱 이름
+name: my_app_1
+#앱 설명
+description: A new Flutter project.
+publish_to: 'none' # Remove this line if you wish to publish to pub.dev
+#앱 버전
+version: 1.0.0+1
+
+#다트 버전
+environment:
+  sdk: '>=2.19.3 <3.0.0'
+
+#종속성, 의존성, 라이브러리
+dependencies:
+  flutter:
+    sdk: flutter
+
+  cupertino_icons: ^1.0.2
+  bloc: ^8.1.1
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+  flutter_lints: ^2.0.0
+
+flutter:
+  uses-material-design: true
