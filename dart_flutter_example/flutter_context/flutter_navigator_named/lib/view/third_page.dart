@@ -1,7 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_navigator_named/routes.dart';
-import 'first_page.dart';
-import 'fourth_page.dart';
 
 class ThirdPage extends StatelessWidget {
   const ThirdPage({super.key});
@@ -37,7 +34,7 @@ class ThirdPage extends StatelessWidget {
             ElevatedButton(
               onPressed: () {
                 Navigator.pushNamedAndRemoveUntil(
-                    context, Routes.first, (Route<dynamic> route) => false);
+                    context, '/', (Route<dynamic> route) => false);
               },
               child: const Text('첫번째 화면 열기\n(나머지 페이지 다 지우기)'),
             ),

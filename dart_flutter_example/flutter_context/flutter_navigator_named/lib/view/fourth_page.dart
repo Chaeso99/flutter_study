@@ -1,7 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_navigator_named/view/first_page.dart';
-
-import '../routes.dart';
 
 class FourthPage extends StatelessWidget {
   const FourthPage({super.key});
@@ -18,7 +15,7 @@ class FourthPage extends StatelessWidget {
           children: [
             ElevatedButton(
               onPressed: () {
-                Navigator.pushNamed(context, Routes.first);
+                Navigator.pushNamed(context, '/');
               },
               child: const Text('첫번째 화면 열기\n(현재페이지 위로 열기)'),
             ),
