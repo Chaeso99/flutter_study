@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 // 프로그램 실행을 위해 main이 필요함.
-void main(){
+void main() {
   // 플러터는 프레임워크 -> 제어의 역전 (IOC)
   // 앱을 실행시켜줘 (개발자가 프레임워크에 요청)
   // 매개변수는 Widget
@@ -87,41 +87,53 @@ class _MyApp2State extends State<MyApp2> {
   int navIndex = 0;
 
   List _items = [
-    Container(color: Colors.yellow,),
-    Container(color: Colors.green,),
-    Container(color:Colors.blue),
+    Container(
+      color: Colors.yellow,
+    ),
+    Container(
+      color: Colors.green,
+    ),
+    Container(color: Colors.blue),
   ];
 
   void increaseCount() {
     // Stateful 변수를 변경할 때에는
     // 무조건 setState 함수를 사용한다.
-     setState(() {
-    count++;
-     });
+    setState(() {
+      count++;
+    });
   }
 
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       home: Scaffold(
-        bottomNavigationBar: BottomNavigationBar(
-          items[BottomNavigationBarItemIcon:Icon]
-          onPressed: () {
+        floatingActionButton: FloatingActionButton(
+          onPressed: (){
             increaseCount();
           },
         ),
+        bottomNavigationBar: BottomNavigationBar(
+          items: [
+            BottomNavigationBarItem(
+              icon: Icon(
+                Icons.abc,
+              ),
+              label: "aa",
+            ),
+            BottomNavigationBarItem(
+              icon: Icon(
+                Icons.abc,
+              ),
+              label: "aa",
+            ),
+          ],
+        ),
         body: SafeArea(
             child: Center(
-              child: Text("현재 카운트 : $count"),
-            )
-        ),
+          child: Text("현재 카운트 : $count"),
+        )),
       ),
     );
   }
 }
-
-
-
-
-
-
