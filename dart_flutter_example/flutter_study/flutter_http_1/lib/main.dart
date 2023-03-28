@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_http_1/view/list_page.dart';
+import 'package:flutter_http_1/post/view/list_page.dart';
 
 void main(){
   runApp(MyApp());

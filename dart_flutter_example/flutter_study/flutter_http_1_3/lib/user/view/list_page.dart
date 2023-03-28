@@ -2,8 +2,8 @@ import 'dart:convert';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
-import 'package:flutter_http_1_3/controller/user_dto.dart';
-import 'package:flutter_http_1_3/controller/user_repository.dart';
+import 'package:flutter_http_1_3/user/model/dto/user_dto.dart';
+import 'package:flutter_http_1_3/user/model/repository/user_repository.dart';
 import 'package:http/http.dart' as http;
 
 class ListPage extends HookWidget {
