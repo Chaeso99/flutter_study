@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_http_1/post/controller/post_table_controller.dart';
-import 'package:flutter_http_1/post/view/pages/list_page.dart';
+import 'package:flutter_http_1_4/user/controller/user_table_controller.dart';
+import 'package:flutter_http_1_4/user/view/pages/list_page.dart';
 import 'package:provider/provider.dart';
 
 void main(){
@@ -14,10 +14,9 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       home: ChangeNotifierProvider(
-        //create는 함수를 받음
-        create: (BuildContext context) => PostTableController(),
+        create: (BuildContext context) => UserTableController(),
         child: ListPage(),
-      ),
+      )
     );
   }
 }

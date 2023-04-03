@@ -2,9 +2,11 @@ import 'dart:convert';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
+import 'package:flutter_http_1/post/controller/post_table_controller.dart';
 import 'package:flutter_http_1/post/model/dto/post_dto.dart';
 import 'package:flutter_http_1/post/model/repository/post_repository.dart';
 import 'package:http/http.dart' as http;
+import 'package:provider/provider.dart';
 
 class ListPage extends HookWidget {
   const ListPage({Key? key}) : super(key: key);
@@ -16,7 +18,8 @@ class ListPage extends HookWidget {
 
     //실제 데이터
     //통신은 실패할 수 있다 = nullable
-    final listState = useState<List<PostDTOTable>?>(null);
+    //final listState = useState<List<PostDTOTable>?>(null);
+    final controller = context.watch<PostTableController>();
 
     //final jsonState = useState<String?>(null);
 
@@ -24,16 +27,17 @@ class ListPage extends HookWidget {
     //빌드가 완료되면 작동한다
     //관찰하는 상태가 변경되면 작동한다
     //관찰하는 상태가 없으면 빌드시 한번 작동한다.
-    useEffect((){
-      PostRepository.instance.getDTOList().then((value){
-        listState.value = value;
-      });
+    useEffect((){ //지금은 페이지당 한번만 작동
+      // PostRepository.instance.getDTOList().then((value){
+      //   listState.value = value;
+      // });
+      controller.setPostDTOTableList();
     },[]);
 
     return Scaffold(
       body: SafeArea(
         child: ListView(
-          children: listState.value?.map((e) => ListItem(postDTOTable: e)).toList()?? [],
+          children: controller.postDTOTableList?.map((e) => ListItem(postDTOTable: e)).toList()?? [],
         ),
       ),
     );

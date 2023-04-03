@@ -35,6 +35,7 @@ class ListItem extends StatelessWidget {
 
   ListItem({Key? key, required this.movieDTOTable}) : super(key: key);
 
+  // 기본적인 UI 세팅(원래 만들었던 예제와 동일)
   // @override
   // Widget build(BuildContext context) {
   //   return Container(
@@ -57,13 +58,11 @@ class ListItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Row(
-        children: List.generate(1, (index) {
-          return Expanded(
-            child: Column(
+          children:[
+            Divider(height: 20,),
+            Column(
               children: [
-                SizedBox(
-                    height: 100,
-                  ), //이미지 들어갈 부분
+                //이미지 들어갈 부분 추가필요
                 Divider(),
                 Text("영화제목 : ${movieDTOTable.movieNm}"),
                 Divider(),
@@ -74,8 +73,7 @@ class ListItem extends StatelessWidget {
                 Text("관객 수 : ${movieDTOTable.audiCnt}"),
               ],
             ),
-          );
-        }),
-      );
+          ],
+    );
   }
 }
