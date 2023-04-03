@@ -35,45 +35,45 @@ class ListItem extends StatelessWidget {
 
   ListItem({Key? key, required this.movieDTOTable}) : super(key: key);
 
-  // 기본적인 UI 세팅(원래 만들었던 예제와 동일)
-  // @override
-  // Widget build(BuildContext context) {
-  //   return Container(
-  //     padding: EdgeInsets.all(10),
-  //     decoration: BoxDecoration(border: Border.all(width: 2, color: Colors.black)),
-  //     child: Column(
-  //       children: [
-  //         Text("영화제목 : ${movieDTOTable.movieNm}"),
-  //         Divider(),
-  //         Text("개봉일 : ${movieDTOTable.openDt}"),
-  //         Divider(),
-  //         Text("랭킹 : ${movieDTOTable.rank}"),
-  //         Divider(),
-  //         Text("관객 수 : ${movieDTOTable.audiCnt}")
-  //       ],
-  //     ),
-  //   );
-  // } //build
-
+  //기본적인 UI 세팅(원래 만들었던 예제와 동일)
   @override
   Widget build(BuildContext context) {
-    return Row(
-          children:[
-            Divider(height: 20,),
-            Column(
-              children: [
-                //이미지 들어갈 부분 추가필요
-                Divider(),
-                Text("영화제목 : ${movieDTOTable.movieNm}"),
-                Divider(),
-                Text("개봉일 : ${movieDTOTable.openDt}"),
-                Divider(),
-                Text("랭킹 : ${movieDTOTable.rank}"),
-                Divider(),
-                Text("관객 수 : ${movieDTOTable.audiCnt}"),
-              ],
-            ),
-          ],
+    return Container(
+      padding: EdgeInsets.all(10),
+      decoration: BoxDecoration(border: Border.all(width: 2, color: Colors.black)),
+      child: Column(
+        children: [
+          Text("영화제목 : ${movieDTOTable.movieNm}"),
+          Divider(),
+          Text("개봉일 : ${movieDTOTable.openDt}"),
+          Divider(),
+          Text("랭킹 : ${movieDTOTable.rank}"),
+          Divider(),
+          Text("관객 수 : ${movieDTOTable.audiCnt}")
+        ],
+      ),
     );
-  }
+  } //build
+
+  // @override
+  // Widget build(BuildContext context) {
+  //   return Row(
+  //         children:[
+  //           Divider(height: 20,),
+  //           Column(
+  //             children: [
+  //               //이미지 들어갈 부분 추가필요
+  //               Divider(),
+  //               Text("영화제목 : ${movieDTOTable.movieNm}"),
+  //               Divider(),
+  //               Text("개봉일 : ${movieDTOTable.openDt}"),
+  //               Divider(),
+  //               Text("랭킹 : ${movieDTOTable.rank}"),
+  //               Divider(),
+  //               Text("관객 수 : ${movieDTOTable.audiCnt}"),
+  //             ],
+  //           ),
+  //         ],
+  //   );
+  // }
 }

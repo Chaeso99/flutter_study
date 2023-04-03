@@ -33,4 +33,9 @@ class PostDTODetail{
   PostDTODetail({required this.userId, required this.id,
     required this.title, required this.body});
 
-}
+  factory PostDTODetail.fromJson(dynamic json){
+  userId : json["userid"],
+  id : json["id"],
+  title : json["title"],
+  body : json["body"],
+    }

@@ -44,7 +44,20 @@ class PostRepository{
         return null;
       }
     }
+
+  Future<PostDTODetail?> getDTO(int postId) async{
+    String url = "https://jsonplaceholder.typicode.com/posts/$postId";
+    http.Response response = await http.get(Uri.parse(url));
+    if(response.statusCode==200){
+      return PostDTODetail.fromJson(jsonDecode(response.body));
+    }else{
+      return null;
+    }
   }
+
+  }
+
+
 
 void main() {
   //PostRepository.instance; //생성자를 불러서 1 출력

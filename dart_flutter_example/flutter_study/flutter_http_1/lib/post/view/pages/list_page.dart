@@ -5,6 +5,8 @@ import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:flutter_http_1/post/controller/post_table_controller.dart';
 import 'package:flutter_http_1/post/model/dto/post_dto.dart';
 import 'package:flutter_http_1/post/model/repository/post_repository.dart';
+import 'package:flutter_http_1/routes.dart';
+import 'package:go_router/go_router.dart';
 import 'package:http/http.dart' as http;
 import 'package:provider/provider.dart';
 
@@ -51,17 +53,22 @@ class ListItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      padding: EdgeInsets.all(10),
-      decoration: BoxDecoration(border: Border.all(width: 2, color: Colors.black)),
-      child: Column(
-        children: [
-          Text("유저번호 : ${postDTOTable.userId}"),
-          Divider(),
-          Text("글 번호 : ${postDTOTable.id}"),
-          Divider(),
-          Text("글 제목 : ${postDTOTable.title}"),
-        ],
+    return InkWell(
+      onTap: () {
+        context.pushNamed(Routes.detail, params: {"postid" : postDTOTable.id.toString()});
+      },
+      child: Container(
+        padding: EdgeInsets.all(10),
+        decoration: BoxDecoration(border: Border.all(width: 2, color: Colors.black)),
+        child: Column(
+          children: [
+            Text("유저번호 : ${postDTOTable.userId}"),
+            Divider(),
+            Text("글 번호 : ${postDTOTable.id}"),
+            Divider(),
+            Text("글 제목 : ${postDTOTable.title}"),
+          ],
+        ),
       ),
     );
   }
