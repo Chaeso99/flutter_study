@@ -17,9 +17,18 @@ class UserRepository{
     String url = "https://jsonplaceholder.typicode.com/users";
     http.Response response = await http.get(Uri.parse(url));
 
-    if(response.statusCode == 200)
-    {
+    if(response.statusCode == 200){
       return UserDTOTable.fromJsonList(jsonDecode(response.body));
+    }else{
+      return null;
+    }
+  }
+
+  Future<UserDTODetail?> getDTO(int userId) async{
+    String url = "https://jsonplaceholder.typicode.com/users/$userId";
+    http.Response response = await http.get(Uri.parse(url));
+    if(response.statusCode==200){
+      return UserDTODetail.fromJson(jsonDecode(response.body));
     }else{
       return null;
     }
