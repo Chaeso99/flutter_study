@@ -23,19 +23,23 @@ class PostDTOTable { //Post가 게시판을 뜻하는것임
 
 }
 
-//상세 페이지용
-class PostDTODetail{
-  int userId; //유저번호
-  int id; //글 번호
-  String title;//제목
+// 상세 페이지 용
+class PostDTODetail {
+  int userId; // 유저 번호
+  int id; // 글 번호
+  String title; // 제목
   String body; //내용
 
-  PostDTODetail({required this.userId, required this.id,
-    required this.title, required this.body});
+  PostDTODetail(
+      {required this.userId,
+        required this.id,
+        required this.title,
+        required this.body});
 
-  factory PostDTODetail.fromJson(dynamic json){
-  userId : json["userid"],
-  id : json["id"],
-  title : json["title"],
-  body : json["body"],
-    }
+  factory PostDTODetail.fromJson(dynamic json) => PostDTODetail(
+    userId: json["userId"],
+    id: json["id"],
+    title: json["title"],
+    body: json["body"],
+  );
+}
